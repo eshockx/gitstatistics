@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: gitstatistics
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.10.10.10:3306/gs_db
+    username: root
+    password: pass
+  jpa:
+    show-sql: true
