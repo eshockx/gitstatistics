@@ -1,4 +1,6 @@
+/.idea/
 /.settings/
+/src/main/resources/static/
 /target/
 /.classpath
 /.project
