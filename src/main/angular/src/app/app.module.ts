@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 import { TabMenuModule } from 'primeng/tabmenu';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,8 +22,11 @@ import { RepoComponent } from './component/main/repo/repo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    TabMenuModule
+    HttpClientModule,
+    ButtonModule,
+    TableModule,
+    TabMenuModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
