@@ -18,7 +18,7 @@ export class RepoComponent implements OnInit {
     this.http.get<Repo[]>('/repo/find/all').subscribe(data => this.repos = data);
   }
 
-  extractFromRepo(repoId: String) {
+  extractFromRepo(repoId: string) {
     this.extractDisabled = true;
     this.http.get('/commit/extract/repo/' + repoId).subscribe(data => this.extractDisabled = false);
   }

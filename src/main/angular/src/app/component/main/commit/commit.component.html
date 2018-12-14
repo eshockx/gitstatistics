@@ -1,3 +1,33 @@
-<p>
-  commit works!
-</p>
+<p-calendar [(ngModel)]="startdate" dateFormat="yy-mm-dd"></p-calendar>
+<p-calendar [(ngModel)]="enddate" dateFormat="yy-mm-dd"></p-calendar>
+<p-dropdown [options]="repos" [(ngModel)]="selectedRepo" placeholder="Select Repo" optionLabel="id" [showClear]="true"></p-dropdown>
+<p-dropdown [options]="authors" [(ngModel)]="selectedAuthor" placeholder="Select Author" [showClear]="true"></p-dropdown>
+<p-button icon="pi pi-search" (onClick)="query()"></p-button>
+<p-table [value]="commits" [autoLayout]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Repo</th>
+            <th>Short Message</th>
+            <th>Author Name</th>
+            <th>Author Email</th>
+            <th>Author When</th>
+            <th>Insertion</th>
+            <th>Deletion</th>
+            <th>Ignored</th>
+        </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-commit>
+        <tr>
+            <td>{{commit.id}}</td>
+            <td>{{commit.repoId}}</td>
+            <td>{{commit.shortMessage}}</td>
+            <td>{{commit.authorName}}</td>
+            <td>{{commit.authorEmail}}</td>
+            <td>{{commit.authorWhen}}</td>
+            <td>{{commit.insertion}}</td>
+            <td>{{commit.deletion}}</td>
+            <td>{{commit.ignored}}</td>
+        </tr>
+    </ng-template>
+</p-table>

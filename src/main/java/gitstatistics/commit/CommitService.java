@@ -1,6 +1,7 @@
 package gitstatistics.commit;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -63,6 +64,14 @@ public class CommitService {
 			diffFormatter.close();
 			git.close();
 		}
+	}
+
+	List<String> findAuthors() {
+		return commitRepository.findAuthors();
+	}
+
+	public List<Commit> findCommits(Date startDate, Date endDate, String repoId, String authorName) {
+		return commitRepository.findCommits(startDate, endDate, repoId, authorName);
 	}
 
 }

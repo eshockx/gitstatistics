@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { TabMenuModule } from 'primeng/tabmenu';
 
@@ -22,8 +26,12 @@ import { RepoComponent } from './component/main/repo/repo.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     ButtonModule,
+    CalendarModule,
+    DropdownModule,
     TableModule,
     TabMenuModule,
     AppRoutingModule
