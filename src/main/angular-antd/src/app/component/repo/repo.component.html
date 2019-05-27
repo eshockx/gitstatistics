@@ -1,3 +1,16 @@
-<p>
-  repo works!
-</p>
+<nz-table #repoTable [nzData]="repos">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Directory</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repo of repoTable.data; index as i">
+      <td>{{repo.id}}</td>
+      <td>{{repo.directory}}</td>
+      <td><button nz-button (click)="extractFromRepo(repo, i)" [nzLoading]="isLoading[i]">Extract</button></td>
+    </tr>
+  </tbody>
+</nz-table>
