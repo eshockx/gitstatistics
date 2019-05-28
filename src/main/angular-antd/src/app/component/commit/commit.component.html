@@ -1,3 +1,36 @@
-<p>
-  commit works!
-</p>
+<nz-range-picker [nzFormat]="yyyy-MM-dd" [(ngModel)]="dateRange"></nz-range-picker>
+<nz-select nzAllowClear nzPlaceHolder="Select Repo" [(ngModel)]="selectedRepo" style="width: 200px;">
+  <nz-option *ngFor="let repo of repos" nzLabel="{{repo.id}}" nzValue="{{repo.id}}"></nz-option>
+</nz-select>
+<nz-select nzAllowClear nzPlaceHolder="Select Author" [(ngModel)]="selectedAuthor" style="width: 200px;">
+  <nz-option *ngFor="let author of authors" nzLabel="{{author}}" nzValue="{{author}}"></nz-option>
+</nz-select>
+<button nz-button (click)="search()"><i nz-icon type="search"></i>Search</button>
+<nz-table #commitTable [nzData]="commits">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Repo</th>
+      <th>Short Message</th>
+      <th>Author Name</th>
+      <th>Author Email</th>
+      <th>Author When</th>
+      <th>Insertion</th>
+      <th>Deletion</th>
+      <th>Ignored</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let commit of commitTable.data">
+      <td>{{commit.id | slice:0:6}}</td>
+      <td>{{commit.repoId}}</td>
+      <td>{{commit.shortMessage}}</td>
+      <td>{{commit.authorName}}</td>
+      <td>{{commit.authorEmail}}</td>
+      <td>{{commit.authorWhen}}</td>
+      <td>{{commit.insertion}}</td>
+      <td>{{commit.deletion}}</td>
+      <td>{{commit.ignored}}</td>
+    </tr>
+  </tbody>
+</nz-table>
